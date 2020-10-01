@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Rohit \'s Ecommerce</string>
     <string name="action_settings">Settings</string>
+    <string name="products_details">Products Details</string>
+    <string name="see_if_its_available">See if its available</string>
+    <string name="home">Home</string>
 </resources>
