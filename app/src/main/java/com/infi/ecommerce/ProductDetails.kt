@@ -1,9 +1,9 @@
 package com.infi.ecommerce
 
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_details.*
 
 class ProductDetails : AppCompatActivity() {
@@ -13,7 +13,13 @@ class ProductDetails : AppCompatActivity() {
         setContentView(R.layout.product_details)
 
         val title = getIntent().getStringExtra("title")
+        val photo_url = getIntent().getStringExtra("photo_url")
+        val price = getIntent().getDoubleExtra("price", 0.0)
+
         tv_productname.text=title
+
+        Picasso.get().load(photo_url).into(iv_photo)
+
 
 
         btn_availablity.setOnClickListener {

@@ -1,12 +1,13 @@
 package com.infi.ecommerce
 
 import android.os.Bundle
-import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.infi.ecommerce.models.Product
 import kotlinx.android.synthetic.main.fragment_main.view.*
@@ -34,6 +35,17 @@ class MainFragment : Fragment() {
                     root.progressBar.visibility=View.GONE
                 }
             }
+        }
+
+        val listCategories = listOf("Jeans","Socks","Skirts","Dresser","Daniel","Rohit","Shirts","Troussar")
+
+        root.rv_categories.apply {
+            layoutManager = LinearLayoutManager(
+                activity,
+                RecyclerView.HORIZONTAL,
+                false
+            )
+            adapter = CategoriesAdapter(listCategories)
         }
 
         return root
