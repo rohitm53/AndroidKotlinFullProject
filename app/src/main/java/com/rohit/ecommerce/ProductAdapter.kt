@@ -1,4 +1,4 @@
-package com.infi.ecommerce
+package com.rohit.ecommerce
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.infi.ecommerce.models.Product
+import com.rohit.ecommerce.models.Product
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_row.view.*
 

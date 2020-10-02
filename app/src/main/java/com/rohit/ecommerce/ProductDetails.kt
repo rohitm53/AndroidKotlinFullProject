@@ -1,4 +1,4 @@
-package com.infi.ecommerce
+package com.rohit.ecommerce
 
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog

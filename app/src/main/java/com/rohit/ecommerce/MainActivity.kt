@@ -1,15 +1,11 @@
-package com.infi.ecommerce
+package com.rohit.ecommerce
 
 import android.os.Bundle
-import android.util.Log.d
-import android.view.Gravity
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.recyclerview.widget.GridLayoutManager
-import com.infi.ecommerce.models.Product
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +14,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+//        doAsync {
+//
+//            val db = Room.databaseBuilder(
+//                applicationContext,
+//                AppDatabase::class.java, "database-name"
+//            ).build()
+//
+//            db.productDao().insertAll(ProductFromDatabase(null,"Socks-one dozen",1.99))
+//            val products = db.productDao().getAll()
+//
+//
+//            uiThread {
+//
+//                d("rohit","Product size : ${products.size} ${products[0]}")
+//
+//            }
+//        }
+
+
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.framelayout,MainFragment())
@@ -41,6 +57,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.actionShorts -> {
 
                 }
+                R.id.actionAdmin -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.framelayout,AdminFragment())
+                        .commit()
+                }
             }
             return@setNavigationItemSelectedListener true
         }
@@ -54,7 +75,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId ==R.id.actionCart){
+            return true
+        }
         drawerlayout.openDrawer(GravityCompat.START)
+        return true
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar,menu)
         return true
     }
 

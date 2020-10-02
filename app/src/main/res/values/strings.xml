@@ -4,4 +4,8 @@
     <string name="products_details">Products Details</string>
     <string name="see_if_its_available">See if its available</string>
     <string name="home">Home</string>
+    <string name="admin">Admin</string>
+    <string name="admin_panel">Admin Panel</string>
+    <string name="product_title">Product Title</string>
+    <string name="search_term">Search Term</string>
 </resources>

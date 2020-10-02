@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.infi.ecommerce.MainActivity">
+    tools:context="com.rohit.ecommerce.MainActivity">
 
     <group android:checkableBehavior="single">
         <item
@@ -33,10 +33,10 @@
             app:showAsAction="never" />
 
         <item
-            android:id="@+id/action_settings4"
+            android:id="@+id/actionAdmin"
             android:orderInCategory="100"
-            android:title="@string/action_settings"
-            android:icon="@drawable/ic_dollar"
+            android:title="@string/admin"
+            android:icon="@drawable/ic_baseline_playlist_add_24"
             app:showAsAction="never" />
 
     </group>

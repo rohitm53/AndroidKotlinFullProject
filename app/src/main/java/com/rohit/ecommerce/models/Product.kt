@@ -1,4 +1,4 @@
-package com.infi.ecommerce.models
+package com.rohit.ecommerce.models
 
 import com.google.gson.annotations.SerializedName
 
