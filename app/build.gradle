@@ -34,7 +34,7 @@ android {
 
 def room_version = "2.2.5"
 def lifecycle_version = "2.2.0"
-def arch_version = "2.1.0"
+def daggerVersion='2.20'
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -70,6 +70,13 @@ dependencies {
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.6.3'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.3'
+
+
+    //Dagger
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
