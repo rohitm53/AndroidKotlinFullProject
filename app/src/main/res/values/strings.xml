@@ -8,4 +8,6 @@
     <string name="admin_panel">Admin Panel</string>
     <string name="product_title">Product Title</string>
     <string name="search_term">Search Term</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
 </resources>

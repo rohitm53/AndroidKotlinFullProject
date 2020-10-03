@@ -21,9 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.rohit.ecommerce.ProductDetails"
+        <activity android:name="com.rohit.ecommerce.productdetails.ProductDetails"
             android:parentActivityName="com.rohit.ecommerce.MainActivity"
             />
+        <activity android:name=".cart.CartActivity"
+          />
     </application>
 
 </manifest>

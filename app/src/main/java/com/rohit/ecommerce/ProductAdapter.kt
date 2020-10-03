@@ -1,6 +1,5 @@
 package com.rohit.ecommerce
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,19 +10,14 @@ import com.rohit.ecommerce.models.Product
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_row.view.*
 
-class ProductAdapter(private var productList : List<Product>) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+class ProductAdapter(
+    private var productList : List<Product>,
+    private val onClickProduct: (Int,photoView:View)-> Unit
+) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.product_row,parent,false)
-        val viewHolder = ViewHolder(view)
-        view.setOnClickListener {
-            val intent = Intent(parent.context,ProductDetails::class.java)
-            intent.putExtra("title",productList[viewHolder.adapterPosition].title)
-            intent.putExtra("photo_url",productList[viewHolder.adapterPosition].photoUrl)
-            intent.putExtra("price",productList[viewHolder.adapterPosition].price)
-            parent.context.startActivity(intent)
-        }
-        return viewHolder
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -36,6 +30,11 @@ class ProductAdapter(private var productList : List<Product>) : RecyclerView.Ada
             holder.iv_isOnSale.visibility=View.VISIBLE
         }else{
             holder.iv_isOnSale.visibility=View.GONE
+        }
+
+        holder.iv_photo.setOnClickListener {
+            onClickProduct.invoke(position,holder.iv_photo)
+
         }
 
     }
